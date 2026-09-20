@@ -82,7 +82,7 @@ Helps visualize how quickly a sensor responds to environmental changes by observ
 
 ## Code-Specific Attributes
 
-### Differential Sampling Logic
+### 0. Differential Sampling Logic
 Instead of relying on absolute voltage values, the algorithm compares consecutive samples:
 
 ```cpp
