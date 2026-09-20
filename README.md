@@ -1,6 +1,6 @@
 # Voltage Trend Indicator
 
-An Arduino-based real-time voltage monitoring system that analyzes the rate of change of an analog input signal and provides intuitive visual feedback using LEDs. The project samples an input voltage, compares it with the previous reading, and determines whether the signal is increasing, decreasing, or remaining stable. At the same time, a third LED dynamically adjusts its brightness according to the instantaneous input voltage using PWM.
+An Arduino-based real-time voltage monitoring algorithm that analyzes the rate of change of an analog input signal and provides intuitive visual feedback using LEDs. The project samples an input voltage, compares it with the previous reading, and determines whether the signal is increasing, decreasing, or remaining stable. At the same time, a third LED dynamically adjusts its brightness according to the instantaneous input voltage using PWM.
 
 ## Features
 
