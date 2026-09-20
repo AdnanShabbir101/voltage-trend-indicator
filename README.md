@@ -85,7 +85,7 @@ change = current_volts - prev_volts;
 
 This allows the system to detect signal trends rather than just signal magnitude.
 
-### Threshold-Based Noise Rejection
+### 1. Threshold-Based Noise Rejection
 
 ```cpp
 if(change > 0.05)
@@ -93,7 +93,7 @@ if(change > 0.05)
 
 A threshold of `±0.05V` prevents minor ADC fluctuations and electrical noise from triggering false trend indications.
 
-### Non-Blocking Timing
+### 2. Non-Blocking Timing
 
 ```cpp
 if(curr_time - prev_time >= interval)
@@ -101,26 +101,26 @@ if(curr_time - prev_time >= interval)
 
 Using `millis()` enables periodic sampling without halting the execution of the program, making the design suitable for real-time embedded applications.
 
-### Custom Trend Detection
+### 3. Custom Trend Detection
 
 The entire trend-analysis algorithm is implemented manually without external libraries, providing a clear and transparent implementation of rate-of-change detection.
 
-### PWM-Based Analog Visualization
+### 4. PWM-Based Analog Visualization
 
 ```cpp
 analogWrite(greenPin, (255.0/1023.0) * readVal);
 ```
 
-The Green LED acts as a visual analog meter whose brightness directly reflects the current input voltage.
+The White LED acts as a visual analog meter whose brightness directly reflects the current input voltage.
 
-### Resource-Efficient Design
+### 5. Resource-Efficient Design
 
 - Constant memory usage
 - No dynamic allocation
 - Minimal computational overhead
 - Suitable for low-resource microcontrollers
 
-### Adjustable Parameters
+### 6. Adjustable Parameters
 
 The following values can be tuned depending on the application:
 
@@ -136,9 +136,9 @@ if(change > 0.05)
 
 - Trend sensitivity threshold
 
-These parameters allow the system to be optimized for both slow-changing and rapidly varying signals.
+**These parameters allow the system to be optimized for both slow-changing and rapidly varying signals.**
 
-## Technical Highlights
+## 🧑‍💻Technical Highlights
 
 - Pure Arduino C/C++ implementation.
 - Custom rate-of-change detection algorithm.
@@ -148,7 +148,7 @@ These parameters allow the system to be optimized for both slow-changing and rap
 - Serial debugging support.
 - No third-party dependencies.
 
-## Repository Goals
+## 💯Repository Goals
 
 This project demonstrates how fundamental signal-processing concepts can be implemented on an Arduino using only built-in functionality. By combining ADC sampling, time-based measurements, differential analysis, threshold filtering, and PWM control, the system provides a compact example of real-time embedded data processing without relying on external libraries.
 
